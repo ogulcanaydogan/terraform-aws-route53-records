@@ -72,7 +72,3 @@ module "simple_record" {
 ## Examples
 
 See [`examples/basic`](examples/basic) for a complete configuration demonstrating both alias and simple record modes.
-
-## Release notes
-
-Publish a new git tag (e.g., `v0.1.2`) after updates so Terraform Registry can resync cleanly.
