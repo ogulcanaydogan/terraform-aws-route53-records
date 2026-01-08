@@ -25,9 +25,9 @@ variable "alb_zone_id" {
 module "alias_record" {
   source = "../../"
 
-  zone_id  = var.hosted_zone_id
-  name     = "alb-alias.example.com"
-  alias_name   = var.alb_dns_name
+  zone_id       = var.hosted_zone_id
+  name          = "alb-alias.example.com"
+  alias_name    = var.alb_dns_name
   alias_zone_id = var.alb_zone_id
 
   evaluate_target_health = true
