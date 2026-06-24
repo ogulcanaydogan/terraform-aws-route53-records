@@ -42,7 +42,7 @@ variable "ttl" {
   default     = null
 
   validation {
-    condition     = var.ttl == null || (var.ttl >= 0 && var.ttl <= 2147483647)
+    condition     = var.ttl == null ? true : (var.ttl >= 0 && var.ttl <= 2147483647)
     error_message = "ttl must be between 0 and 2147483647 seconds."
   }
 }
@@ -96,7 +96,7 @@ variable "weight" {
   default     = null
 
   validation {
-    condition     = var.weight == null || (var.weight >= 0 && var.weight <= 255)
+    condition     = var.weight == null ? true : (var.weight >= 0 && var.weight <= 255)
     error_message = "weight must be between 0 and 255."
   }
 }
@@ -113,7 +113,7 @@ variable "geolocation_continent" {
   default     = null
 
   validation {
-    condition     = var.geolocation_continent == null || contains(["AF", "AN", "AS", "EU", "OC", "NA", "SA"], var.geolocation_continent)
+    condition     = var.geolocation_continent == null ? true : contains(["AF", "AN", "AS", "EU", "OC", "NA", "SA"], var.geolocation_continent)
     error_message = "geolocation_continent must be one of: AF, AN, AS, EU, OC, NA, SA."
   }
 }
@@ -136,7 +136,7 @@ variable "failover_type" {
   default     = null
 
   validation {
-    condition     = var.failover_type == null || contains(["PRIMARY", "SECONDARY"], var.failover_type)
+    condition     = var.failover_type == null ? true : contains(["PRIMARY", "SECONDARY"], var.failover_type)
     error_message = "failover_type must be PRIMARY or SECONDARY."
   }
 }
